@@ -1,0 +1,39 @@
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:postgresql://localhost:5432/movietheater
+    username: postgresMaster
+    password: goPostgresGo
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    root: WARN
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
+
+external-api:
+  omdb:
+    api-key: 2bdcd5e8
+    url: http://www.omdbapi.com/
+  img-omdb:
+    api-key: 2bdcd5e8
+    url: http://img.omdbapi.com/
+  tmdb:
+    api-key: 4ff2845f2a1311a1a3336844cfddb642
+    url: https://api.themoviedb.org/3/
