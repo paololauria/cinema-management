@@ -702,26 +702,7 @@ ALTER TABLE ONLY public.reservation
 -- PostgreSQL database dump complete
 --
 
-
--- Inserimento di attori (actor)
-INSERT INTO public.actor (actor_id, actor_name, actor_img)
-VALUES
-  (nextval('public.actor_id_seq'), 'Margot Robbie', 'https://image.tmdb.org/t/p/w500/euDPyqLnuwaWMHajcU3oZ9uZezR.jpg'),
-  (nextval('public.actor_id_seq'), 'Ryan Gosling', 'https://cdn.britannica.com/93/215393-050-E428CADE/Canadian-actor-musician-Ryan-Gosling-2016.jpg?w=400&h=300&c=crop'),
-  (nextval('public.actor_id_seq'), 'Cillian Murphy', 'https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/236083_v9_bd.jpg'),
-  (nextval('public.actor_id_seq'), 'Matt Damon', 'https://m.media-amazon.com/images/M/MV5BMTU0MTQ4OTMyMV5BMl5BanBnXkFtZTcwMTQxOTY1NA@@._V1_.jpg'),
-  (nextval('public.actor_id_seq'), 'Robert Downey Jr.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg/640px-Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg'),
-  (nextval('public.actor_id_seq'), 'Scarlett Johansson', 'https://media.gqitalia.it/photos/5f9bb303b16a44e7b421f225/master/pass/40-datos-curiosos-para-descubrir-a-scarlett-johansson.jpg'),
-  (nextval('public.actor_id_seq'), 'Mark Ruffalo', 'https://m.media-amazon.com/images/M/MV5BNWIzZTI1ODUtZTUzMC00NTdiLWFlOTYtZTg4MGZkYmU4YzNlXkEyXkFqcGdeQXVyNTExOTk5Nzg@._V1_.jpg'),
-  (nextval('public.actor_id_seq'), 'Gian', 'https://media.licdn.com/dms/image/D4E03AQEkkc5C5GfMig/profile-displayphoto-shrink_800_800/0/1688381929614?e=2147483647&v=beta&t=M_AqJX-O994UyeC7lp_ruOpMhzPZDwYFYGUxXmquUWA'),
-  (nextval('public.actor_id_seq'), 'Riccardo', 'https://cdn.oreillystatic.com/authors/trim/prod/images/39372-200x200.jpg'),
-  (nextval('public.actor_id_seq'), 'Bruce Campbell', 'https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/2/13/1234544417531/Bruce-Campbell-in-Army-of-001.jpg?width=465&dpr=1&s=none'),
-  (nextval('public.actor_id_seq'), 'Hugh Grant', 'https://m.media-amazon.com/images/M/MV5BMTc4MTgxOTk2Ml5BMl5BanBnXkFtZTcwNzMwMjYwMw@@._V1_.jpg'),
-  (nextval('public.actor_id_seq'), 'Paolo Villaggio', 'https://pad.mymovies.it/filmclub/attori/387.jpg'),
-  (nextval('public.actor_id_seq'), 'Emma Stone', 'https://m.media-amazon.com/images/M/MV5BMjI4NjM1NDkyN15BMl5BanBnXkFtZTgwODgyNTY1MjE@._V1_.jpg'),
-  (nextval('public.actor_id_seq'), 'Mario Reda', 'https://www.madmass.it/wp-content/uploads/2021/11/leonardo-dicaprio-migliori-interpretazioni-drammatiche-1.jpg'),
-  (nextval('public.actor_id_seq'), 'Jim Carrey ', 'https://www.usatoday.com/gcdn/-mm-/d25c78a66612aa7d2186241811a4aae48d47a9a9/c=0-304-3648-5168/local/-/media/2017/06/01/USATODAY/USATODAY/636319345956925087-Jim-Carrey-beard-1.jpg');
--- Inserimento di film (film)
+-- Inserting films (film)
 INSERT INTO public.film (title)
 VALUES
   ( 'Barbie'),
@@ -740,7 +721,7 @@ VALUES
   ('Elemental'),
   ( 'Poor Things');
 
--- Inserimento di generi (genre)
+-- Inserting genres (genre)
 INSERT INTO public.genre (genre_id, genre_name) VALUES
   (nextval('public.genre_id_seq'), 'Drama'),
   (nextval('public.genre_id_seq'), 'Crime'),
@@ -753,45 +734,15 @@ INSERT INTO public.genre (genre_id, genre_name) VALUES
   (nextval('public.genre_id_seq'), 'Comedy'),
   (nextval('public.genre_id_seq'), 'Animation');
 
--- Inserimento di sale (hall)
+-- Inserting hall (hall)
 INSERT INTO public.hall (hall_id, name, row_seat, row_column)
 VALUES
   (1, 'Hall Spielberg', 5, 8),
   (2, 'Hall Hepburn', 6, 10),
   (3, 'Hall Hitchcock', 3, 8),
-  (4, 'Hall Kubrick', 10, 14);
+  (4, 'Hall Kubrick', 6, 8);
 
-
-
-  -- Inserimento di film_actor (film, actor)
-  INSERT INTO public.performance (film_id, actor_id, role_name)
-  VALUES
-      (1, 1, 'Ken'),
-      (1, 2, 'Barbie'),
-      (2, 5, 'J. Robert Oppenheimer'),
-      (2, 3, 'General Leslie Groves'),
-      (3, 2, 'Mr. Johnson'),
-      (3, 12, 'Mrs. Smith'),
-      (4, 14, 'se stesso'),
-      (5, 8, 'Voldemort'),
-      (5, 9, 'Albus Silente'),
-      (6, 10, 'Winnie the Pooh'),
-      (6, 3, 'Piglet'),
-      (7, 2, 'Jennifer Corvino'),
-      (7, 6, 'Frau Brückner'),
-      (8, 10, 'Ash Williams'),
-      (8, 14, 'Linda'),
-      (9, 2, 'Genie'),
-      (9, 13, 'Aladdin'),
-      (10, 11, 'Willy Wonka'),
-      (11, 3, 'Paul Bratter'),
-      (11, 13, 'Corie Bratter'),
-      (12, 14, 'se stesso'),
-      (12, 12, 'Fracchia'),
-      (13, 13, 'Victor Van Dort');
-
-
-    -- Inserimento di film_genre (film, genre)
+-- Inserting  film_genre (film, genre)
 INSERT INTO public.film_genre (film_id, genre_id)
 VALUES
   (1, 7),
@@ -800,7 +751,6 @@ VALUES
 
   (2, 1),
   (2, 3),
-
 
   (3, 9),
   (3, 1),
@@ -840,136 +790,6 @@ VALUES
   (13, 10),
   (13, 6);
 
--- Inserimento di proiezioni (projection)
-
-
- -- Proiezioni per la sala 1
- -- Fracchia la Belva Umana
- INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
- VALUES
-     (nextval('public.film_projection_id_seq'), 12, 1, '2024-02-24', '15:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 12, 1, '2024-02-25', '15:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 12, 1, '2024-02-26', '15:00', 10.00),
- -- Poor Things
-     (nextval('public.film_projection_id_seq'), 13, 1, '2024-02-24', '19:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 13, 1, '2024-02-25', '19:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 13, 1, '2024-02-26', '19:00', 10.00),
- -- Wonka
-     (nextval('public.film_projection_id_seq'), 10, 1, '2024-02-24', '21:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 10, 1, '2024-02-25', '21:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 10, 1, '2024-02-26', '21:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 14, 1, '2024-02-24', '15:00', 10.00),
-
-       (nextval('public.film_projection_id_seq'), 14, 1, '2024-02-25', '15:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 14, 1, '2024-02-26', '15:00', 10.00),
-       -- Another Film
-       (nextval('public.film_projection_id_seq'), 15, 1, '2024-02-24', '19:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 15, 1, '2024-02-25', '19:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 15, 1, '2024-02-26', '19:00', 10.00),
-       -- Yet Another Film
-       (nextval('public.film_projection_id_seq'), 11, 1, '2024-02-24', '21:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 11, 1, '2024-02-25', '21:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 11, 1, '2024-02-26', '21:00', 10.00),
-       -- And Another One
-       (nextval('public.film_projection_id_seq'), 12, 1, '2024-02-24', '14:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 12, 1, '2024-02-25', '17:30', 10.00);
- -- Proiezioni per la sala 2
- -- Barbie
- INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
- VALUES
-     (nextval('public.film_projection_id_seq'), 1, 2, '2024-02-24', '15:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 1, 2, '2024-02-25', '15:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 1, 2, '2024-02-26', '15:00', 10.00),
- -- Mario Reda
-     (nextval('public.film_projection_id_seq'), 4, 2, '2024-02-24', '19:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 4, 2, '2024-02-25', '19:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 4, 2, '2024-02-26', '19:00', 10.00),
- -- THE HARRY POTTER SAGA
-     (nextval('public.film_projection_id_seq'), 5, 2, '2024-02-24', '21:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 5, 2, '2024-02-25', '21:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 5, 2, '2024-02-26', '21:00', 10.00);
-      INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
-      VALUES
-          (nextval('public.film_projection_id_seq'), 1, 2, '2024-02-24', '15:00', 10.00),
-          (nextval('public.film_projection_id_seq'), 1, 2, '2024-02-25', '15:00', 10.00),
-          (nextval('public.film_projection_id_seq'), 1, 2, '2024-02-26', '15:00', 10.00),
-      -- Mario Reda
-          (nextval('public.film_projection_id_seq'), 4, 2, '2024-02-24', '19:00', 10.00),
-          (nextval('public.film_projection_id_seq'), 4, 2, '2024-02-25', '19:00', 10.00),
-          (nextval('public.film_projection_id_seq'), 4, 2, '2024-02-26', '19:00', 10.00),
-      -- THE HARRY POTTER SAGA
-          (nextval('public.film_projection_id_seq'), 5, 2, '2024-02-24', '21:00', 10.00),
-          (nextval('public.film_projection_id_seq'), 5, 2, '2024-02-25', '21:00', 10.00),
-          (nextval('public.film_projection_id_seq'), 5, 2, '2024-02-26', '21:00', 10.00);
-
- -- Proiezioni per la sala 3
- -- Oppenheimer
- INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
- VALUES
-     (nextval('public.film_projection_id_seq'), 2, 3, '2024-02-24', '15:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 2, 3, '2024-02-25', '15:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 2, 3, '2024-02-26', '15:00', 10.00),
- -- Winnie the Pooh - Blood and Honey 2
-     (nextval('public.film_projection_id_seq'), 6, 3, '2024-02-24', '19:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 6, 3, '2024-02-25', '19:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 6, 3, '2024-02-26', '19:00', 10.00),
- -- Phenomena
-     (nextval('public.film_projection_id_seq'), 7, 3, '2024-02-24', '21:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 7, 3, '2024-02-25', '21:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 7, 3, '2024-02-26', '21:00', 10.00);
-INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
-VALUES
-  (nextval('public.film_projection_id_seq'), 8, 3, '2024-02-24', '15:00', 10.00),
-  (nextval('public.film_projection_id_seq'), 8, 3, '2024-02-25', '15:00', 10.00),
-  (nextval('public.film_projection_id_seq'), 8, 3, '2024-02-26', '15:00', 10.00),
-  -- Another Film
-  (nextval('public.film_projection_id_seq'), 9, 3, '2024-02-24', '19:00', 10.00),
-  (nextval('public.film_projection_id_seq'), 9, 3, '2024-02-25', '19:00', 10.00),
-  (nextval('public.film_projection_id_seq'), 9, 3, '2024-02-26', '19:00', 10.00),
-  -- Yet Another Film
-  (nextval('public.film_projection_id_seq'), 10, 3, '2024-02-24', '21:00', 10.00),
-  (nextval('public.film_projection_id_seq'), 10, 3, '2024-02-25', '21:00', 10.00),
-  (nextval('public.film_projection_id_seq'), 10, 3, '2024-02-26', '21:00', 10.00),
-  -- And Another One
-  (nextval('public.film_projection_id_seq'), 11, 3, '2024-02-24', '14:00', 10.00),
-  (nextval('public.film_projection_id_seq'), 11, 3, '2024-02-25', '17:30', 10.00);
-
-
- -- Proiezioni per la sala 4
- -- The Holdovers
- INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
- VALUES
-     (nextval('public.film_projection_id_seq'), 3, 4, '2024-02-24', '15:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 3, 4, '2024-02-25', '15:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 3, 4, '2024-02-26', '15:00', 10.00),
- -- L'Armata delle Tenebre
-     (nextval('public.film_projection_id_seq'), 8, 4, '2024-02-24', '19:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 8, 4, '2024-02-25', '19:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 8, 4, '2024-02-26', '19:00', 10.00),
- -- Wish
-     (nextval('public.film_projection_id_seq'), 9, 4, '2024-02-24', '21:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 9, 4, '2024-02-25', '21:00', 10.00),
-     (nextval('public.film_projection_id_seq'), 9, 4, '2024-02-26', '21:00', 10.00);
-     INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
-     VALUES
-       (nextval('public.film_projection_id_seq'), 13, 4, '2024-02-24', '15:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 13, 4, '2024-02-25', '15:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 13, 4, '2024-02-26', '15:00', 10.00),
-       -- L'Armata delle Tenebre
-       (nextval('public.film_projection_id_seq'), 14, 4, '2024-02-24', '19:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 14, 4, '2024-02-25', '19:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 14, 4, '2024-02-26', '19:00', 10.00),
-       -- Wish
-       (nextval('public.film_projection_id_seq'), 15, 4, '2024-02-24', '21:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 15, 4, '2024-02-25', '21:00', 10.00),
-       (nextval('public.film_projection_id_seq'), 15, 4, '2024-02-26', '21:00', 10.00);
-
-
-
-
-
-
-
 INSERT INTO public._user (user_id, firstname, lastname, birthdate, email, password, role)
 VALUES
     (1,'Paolo', 'Lauria', '1900-12-10', 'jaita@gmail.com', '$2a$10$qych9P0oaZ9pvWGodxoo2etZru3UilDdLvQ2HDCQrySJpZffG/OWu', 'USER'),
@@ -994,7 +814,7 @@ VALUES
      (nextval('public.feedback_id_seq'), 2, 9, 9, 'Emotional story and extraordinary animation.'),  -- Wish
      (nextval('public.feedback_id_seq'), 2, 10, 7, 'Interesting reinterpretation of Willy Wonka''s world.'),  -- Wonka
      (nextval('public.feedback_id_seq'), 2, 11, 8, 'Romantic and funny.'),  -- Barefoot in the Park
-     (nextval('public.feedback_id_seq'), 2, 12, 7, 'Classic Italian with comedic moments.'),  -- Fracchia the Human Beast
+     (nextval('public.feedback_id_seq'), 2, 15, 7, 'Classic Italian with comedic moments.'),  -- Fracchia the Human Beast
      (nextval('public.feedback_id_seq'), 2, 13, 9, 'Out of the ordinary and fun!');  -- Poor Things
 
  -- Inserting reviews for each movie with user ID 2
@@ -1029,7 +849,7 @@ VALUES
      (nextval('public.feedback_id_seq'), 4, 10, 8, 'Interesting interpretation of Willy Wonka''s world.'),  -- Wonka
      (nextval('public.feedback_id_seq'), 4, 11, 8, 'Romantic and funny.'),  -- Barefoot in the Park
      (nextval('public.feedback_id_seq'), 4, 12, 7, 'Classic Italian comedy with hilarious moments.'),  -- Fracchia the Human Beast
-     (nextval('public.feedback_id_seq'), 4, 13, 8, 'Unique and fun!');  -- Poor Things
+     (nextval('public.feedback_id_seq'), 4, 15, 8, 'Unique and fun!');  -- Poor Things
 
  -- Inserting reviews for each movie with user ID 4
  INSERT INTO public.feedback(feedback_id, user_id, film_id, rating, comment)
@@ -1044,7 +864,7 @@ VALUES
      (nextval('public.feedback_id_seq'), 5, 8, 7, 'Fun and slightly scary.'),  -- Army of Darkness
      (nextval('public.feedback_id_seq'), 5, 9, 9, 'Beautiful story and high-quality animation.'),  -- Wish
      (nextval('public.feedback_id_seq'), 5, 10, 8, 'A unique and creative take on Willy Wonka''s world.'),  -- Wonka
-     (nextval('public.feedback_id_seq'), 5, 11, 8, 'Funny and romantic.'),  -- Barefoot in the Park
+     (nextval('public.feedback_id_seq'), 5, 12, 8, 'Funny and romantic.'),  -- Barefoot in the Park
      (nextval('public.feedback_id_seq'), 5, 12, 7, 'Classic Italian comedy with funny moments.'),  -- Fracchia the Human Beast
      (nextval('public.feedback_id_seq'), 5, 13, 9, 'Quirky and fun!');  -- Poor Things
 
@@ -1066,4 +886,115 @@ VALUES
      (nextval('public.feedback_id_seq'), 6, 13, 9, 'Out of the ordinary and fun!');  -- Poor Things
 
 
+---- Inserting actors (actor) -- Commented
+--INSERT INTO public.actor (actor_id, actor_name, actor_img)
+--VALUES
+--  (nextval('public.actor_id_seq'), 'Margot Robbie', 'https://image.tmdb.org/t/p/w500/euDPyqLnuwaWMHajcU3oZ9uZezR.jpg'),
+--  (nextval('public.actor_id_seq'), 'Ryan Gosling', 'https://cdn.britannica.com/93/215393-050-E428CADE/Canadian-actor-musician-Ryan-Gosling-2016.jpg?w=400&h=300&c=crop'),
+--  (nextval('public.actor_id_seq'), 'Cillian Murphy', 'https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/236083_v9_bd.jpg'),
+--  (nextval('public.actor_id_seq'), 'Matt Damon', 'https://m.media-amazon.com/images/M/MV5BMTU0MTQ4OTMyMV5BMl5BanBnXkFtZTcwMTQxOTY1NA@@._V1_.jpg'),
+--  (nextval('public.actor_id_seq'), 'Robert Downey Jr.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg/640px-Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg'),
+--  (nextval('public.actor_id_seq'), 'Scarlett Johansson', 'https://media.gqitalia.it/photos/5f9bb303b16a44e7b421f225/master/pass/40-datos-curiosos-para-descubrir-a-scarlett-johansson.jpg'),
+--  (nextval('public.actor_id_seq'), 'Mark Ruffalo', 'https://m.media-amazon.com/images/M/MV5BNWIzZTI1ODUtZTUzMC00NTdiLWFlOTYtZTg4MGZkYmU4YzNlXkEyXkFqcGdeQXVyNTExOTk5Nzg@._V1_.jpg'),
+--  (nextval('public.actor_id_seq'), 'Gian', 'https://media.licdn.com/dms/image/D4E03AQEkkc5C5GfMig/profile-displayphoto-shrink_800_800/0/1688381929614?e=2147483647&v=beta&t=M_AqJX-O994UyeC7lp_ruOpMhzPZDwYFYGUxXmquUWA'),
+--  (nextval('public.actor_id_seq'), 'Riccardo', 'https://cdn.oreillystatic.com/authors/trim/prod/images/39372-200x200.jpg'),
+--  (nextval('public.actor_id_seq'), 'Bruce Campbell', 'https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/2/13/1234544417531/Bruce-Campbell-in-Army-of-001.jpg?width=465&dpr=1&s=none'),
+--  (nextval('public.actor_id_seq'), 'Hugh Grant', 'https://m.media-amazon.com/images/M/MV5BMTc4MTgxOTk2Ml5BMl5BanBnXkFtZTcwNzMwMjYwMw@@._V1_.jpg'),
+--  (nextval('public.actor_id_seq'), 'Paolo Villaggio', 'https://pad.mymovies.it/filmclub/attori/387.jpg'),
+--  (nextval('public.actor_id_seq'), 'Emma Stone', 'https://m.media-amazon.com/images/M/MV5BMjI4NjM1NDkyN15BMl5BanBnXkFtZTgwODgyNTY1MjE@._V1_.jpg'),
+--  (nextval('public.actor_id_seq'), 'Mario Reda', 'https://www.madmass.it/wp-content/uploads/2021/11/leonardo-dicaprio-migliori-interpretazioni-drammatiche-1.jpg'),
+--  (nextval('public.actor_id_seq'), 'Jim Carrey ', 'https://www.usatoday.com/gcdn/-mm-/d25c78a66612aa7d2186241811a4aae48d47a9a9/c=0-304-3648-5168/local/-/media/2017/06/01/USATODAY/USATODAY/636319345956925087-Jim-Carrey-beard-1.jpg');
+--
 
+
+--  -- Inserting film_actor (film, actor) -- Commented
+--  INSERT INTO public.performance (film_id, actor_id, role_name)
+--  VALUES
+--      (1, 1, 'Ken'),
+--      (1, 2, 'Barbie'),
+--      (2, 5, 'J. Robert Oppenheimer'),
+--      (2, 3, 'General Leslie Groves'),
+--      (3, 2, 'Mr. Johnson'),
+--      (3, 12, 'Mrs. Smith'),
+--      (4, 14, 'se stesso'),
+--      (5, 8, 'Voldemort'),
+--      (5, 9, 'Albus Silente'),
+--      (6, 10, 'Winnie the Pooh'),
+--      (6, 3, 'Piglet'),
+--      (7, 2, 'Jennifer Corvino'),
+--      (7, 6, 'Frau Brückner'),
+--      (8, 10, 'Ash Williams'),
+--      (8, 14, 'Linda'),
+--      (9, 2, 'Genie'),
+--      (9, 13, 'Aladdin'),
+--      (10, 11, 'Willy Wonka'),
+--      (11, 3, 'Paul Bratter'),
+--      (11, 13, 'Corie Bratter'),
+--      (12, 14, 'se stesso'),
+--      (12, 12, 'Fracchia'),
+--      (13, 13, 'Victor Van Dort');
+
+
+-- Commented manual insertion of projections
+--
+-- INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
+-- VALUES
+--     (nextval('public.film_projection_id_seq'), 15, 1, '2024-03-06', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 9, 1, '2024-03-07', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 6, 1, '2024-03-08', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 1, 1, '2024-03-06', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 4, 1, '2024-03-07', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 5, 1, '2024-03-08', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 3, 1, '2024-03-06', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 7, 1, '2024-03-07', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 8, 1, '2024-03-08', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 9, 1, '2024-03-06', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 10, 1, '2024-03-07', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 11, 1, '2024-03-08', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 12, 1, '2024-03-06', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 13, 1, '2024-03-07', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 14, 1, '2024-03-08', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 1, 1, '2024-03-06', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 2, 1, '2024-03-07', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 3, 1, '2024-03-08', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 4, 1, '2024-03-06', '14:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 5, 1, '2024-03-07', '17:30', 10.00);
+--
+--
+-- INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
+-- VALUES
+--     (nextval('public.film_projection_id_seq'), 1, 2, '2024-03-06', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 2, 2, '2024-03-07', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 3, 2, '2024-03-08', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 4, 2, '2024-03-06', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 5, 2, '2024-03-07', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 6, 2, '2024-03-08', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 5, 2, '2024-03-06', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 5, 2, '2024-03-07', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 5, 2, '2024-03-08', '21:00', 10.00);
+--
+--
+-- INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
+-- VALUES
+--     (nextval('public.film_projection_id_seq'), 2, 3, '2024-03-06', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 2, 3, '2024-03-07', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 2, 3, '2024-03-08', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 6, 3, '2024-03-06', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 6, 3, '2024-03-07', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 6, 3, '2024-03-08', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 7, 3, '2024-03-06', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 7, 3, '2024-03-07', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 7, 3, '2024-03-08', '21:00', 10.00);
+--
+--
+-- INSERT INTO public.film_projection (projection_id, film_id, hall_id, projection_date, projection_time, ticket_price)
+-- VALUES
+--     (nextval('public.film_projection_id_seq'), 3, 4, '2024-03-06', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 3, 4, '2024-03-07', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 3, 4, '2024-03-08', '15:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 8, 4, '2024-03-06', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 8, 4, '2024-03-07', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 8, 4, '2024-03-08', '19:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 9, 4, '2024-03-06', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 9, 4, '2024-03-07', '21:00', 10.00),
+--     (nextval('public.film_projection_id_seq'), 9, 4, '2024-03-08', '21:00', 10.00);

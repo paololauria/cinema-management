@@ -11,9 +11,10 @@ public interface CinemaService {
 
 
     List<Hall> findAllHalls();
+
     Hall findHallById(long hallId);
     Hall findHallByProjectionId(long projectionId) throws EntityNotFoundException;
-
+    Hall getRandomHall(List<Hall> halls);
 
     List<Reservation> findReservationByProjection(long projectionId);
     List<Reservation> findReservationByUser(Long userId);

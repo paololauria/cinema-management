@@ -41,7 +41,12 @@ public class FilmProjectionController {
     )
     public ResponseEntity<List<FilmProjectionDto>> getAllProjection() {
         List<FilmProjection> films = filmProjectionService.findAllProjections();
-        List<FilmProjectionDto> result = films.stream().map(FilmProjectionDto::new).toList();
+        List<FilmProjectionDto> result = films.stream().map(filmProjection -> {
+            FilmProjectionDto dto = new FilmProjectionDto(filmProjection);
+            OmdbMovieInfo omdbInfo = omdbAPIService.getMovieByTitle(filmProjection.getFilmTitle());
+            dto.setOmdbMovieInfo(omdbInfo);
+            return dto;
+        }).toList();
         return ResponseEntity.ok(result);
     }
 
@@ -187,5 +192,16 @@ public class FilmProjectionController {
 
         return new ResponseEntity<>(filmProjectionDtos, HttpStatus.OK);
     }
+
+    @PostMapping("/generate-daily")
+    @Operation(
+            summary = "Generate daily projections for the next seven days",
+            description = "Automatically generate and save film projections for the next seven days, one projection per film per day."
+    )
+    public ResponseEntity<String> generateDailyProjections() {
+        filmProjectionService.generateDailyProjections();
+        return ResponseEntity.ok("Projections generated successfully");
+    }
+
 }
 

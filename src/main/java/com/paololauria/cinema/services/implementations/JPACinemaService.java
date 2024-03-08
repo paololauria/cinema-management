@@ -6,6 +6,8 @@ import com.paololauria.cinema.services.abstraction.CinemaService;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
+
 @Service
 public class JPACinemaService implements CinemaService {
     private final ActorRepository actorRepository;
@@ -73,6 +75,13 @@ public class JPACinemaService implements CinemaService {
     public List<Hall> findAllHalls() {
         return hallRepository.findAll();
     }
+
+    @Override
+    public Hall getRandomHall(List<Hall> halls) {
+        Random random = new Random();
+        return halls.get(random.nextInt(halls.size()));
+    }
+
     @Override
     public Hall findHallById(long hallId) {
         Optional<Hall> ot = hallRepository.findById(hallId);
