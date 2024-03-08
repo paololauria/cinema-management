@@ -1,31 +1,64 @@
+# Cinema Management System - Backend
 
-Cinema Management System Backend
+## Introduction
+This repository contains the backend for a comprehensive cinema management system. The system enables users to view, book, and rate movies, while providing administrators with tools to manage projections, films, and users.
 
-INTRODUCTION:
+## Main Features
+1. **Authentication:**
+    - Login and registration functionalities for users.
+    - Access to various features and the ability to save preferences.
 
-The Cinema Management System backend is the powerful engine driving the single-page application (SPA) designed to streamline cinema operations. It provides essential functionalities for:
+2. **Movie Display:**
+    - View movies available for the current day and week.
+    - Search movies by genre and view them based on average user ratings.
 
-User Management: Handles user registration, login, and profile management, ensuring secure access to the system.
+3. **User Feedback Management:**
+    - Leave feedback and assign ratings to watched movies.
+    - Feedback used to calculate an average movie rating.
 
-Ticket Booking: Facilitates seamless ticket booking by managing movie and seat selection, availability checks, and secure payment processing (integration required).
+4. **Projection and Movie Management:**
+    - Administrators can manage cinema projections, including creation, deletion, and modification.
+    - Manage the film inventory by adding new films, removing them, or modifying details.
 
-Movie Data Management: Stores and serves comprehensive information about upcoming movies, including trailers, cast, duration, and other relevant details, potentially fetching additional data from external APIs like OMDb.
+5. **Reservation Management:**
+    - Users can book seats for available shows.
+    - Reservations displayed in the user profile with details about booked seats and show information.
 
-Reviews and Feedback: Enables users to leave reviews and provide feedback on movies, fostering community engagement and valuable insights.
+6. **User Profile Page:**
+    - Provides personal information about the user, including name, surname, and date of birth.
+    - Lists reservations made by the user and published feedback for movies.
 
-Cinema Management: Empowers authorized personnel to schedule and edit movie screenings, manage theater details, actor information, and various other cinema-related data.
+7. **Admin Page:**
+    - Advanced functionalities for administrators to manage projections, films, and users.
+    - Create, delete, and modify projections and films, as well as manage user accounts.
 
-Real-time Updates: Ensures consistent and up-to-date information on movie schedules and availability for users, improving overall user experience.
+8. **Booking Page:**
+    - Allows users to view real-time availability of seats for shows.
+    - Provides access to discounted seats for children under 12.
 
-BENEFITS:
+## Technologies Used
+- **Database:** PostgreSQL with PGAdmin 4 for database management.
+- **Backend:** Java with the Spring framework, including Spring Security and Spring Data JPA for security and data management.
+- **Frontend:** Angular, with Typescript, CSS, and HTML for creating user interfaces.
 
-Efficient and Scalable: Designed using Java Spring framework for robust performance and scalability, handling high volumes of data and user requests effectively.
+## Installation & Set Up
+Follow these steps to install and set up the backend:
 
-Secure and Reliable: Implements robust security measures to protect user data and ensure system integrity.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/PaoloLauria/cinema-management-system-backend.git
 
-Flexible and Customizable: Offers the potential for customization to cater to specific cinema needs and integrate with various third-party services.
+2. **Database Setup:**
 
-Technologies:
-Java: Proven and versatile programming language for backend development.
-Spring Framework: Provides a comprehensive and powerful framework for building enterprise applications.
-PostgreSQL with pgAdmin: Robust and feature-rich relational database for storing and managing cinema data with a user-friendly administration interface.
+Copy the database schema from cinema.sql.
+
+Utilize any preferred database tool for managing the database. PostgreSQL with PGAdmin 4 is recommended but not mandatory.
+
+3. **Install Maven Dependencies:**
+
+Navigate to the project's root directory containing the 'pom.xml' file.
+
+4. **Run:**
+
+Execute the application using a tool of your choice. For example, you can use Docker or any other tool that can run the application.
+
